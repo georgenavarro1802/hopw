@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import url, include
+from django.conf.urls import url
 
 from app import views
 
@@ -27,6 +27,12 @@ urlpatterns = [
 
     # INDEX (Dashboard)
     url(r'^$', views.index, name='index'),
+
+    # Newsletter
+    url(r'^newsletter$', views.newsletter, name='newsletter'),
+
+    # Contacts
+    url(r'^contact$', views.contact, name='contact'),
 
 ]
 

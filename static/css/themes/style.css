@@ -1844,15 +1844,15 @@ div.wpcf7-validation-errors {
 	z-index: 1000;
 	right: -20px !important;
 }
-.icon-phone-grey {
-	background: url(/static/images/web/phone-icon.png) no-repeat center center;
-}
-.icon-envelope-grey {
-	background: url(/static/images/web/envelope-icon.png) no-repeat center center;
-}
-.icon-building-grey {
-	background: url(/static/images/web/icon-building-grey.png) no-repeat center center;
-}
+/*.icon-phone-grey {*/
+	/*background: url(/static/images/web/phone-icon.png) no-repeat center center;*/
+/*}*/
+/*.icon-envelope-grey {*/
+	/*background: url(/static/images/web/envelope-icon.png) no-repeat center center;*/
+/*}*/
+/*.icon-building-grey {*/
+	/*background: url(/static/images/web/icon-building-grey.png) no-repeat center center;*/
+/*}*/
 .footer-form .widget {
 	text-align: center;
 	margin-top: 49px;
@@ -4137,7 +4137,7 @@ MC4WP form
 	z-index: 2;
 }
 .roadtip:after {
-	background: url('/static/images/web/arrow-tip.png') no-repeat center center;
+	/*background: url('/static/images/web/arrow-tip.png') no-repeat center center;*/
 	bottom: -6px;
 	content: "";
 	display: block;
@@ -6695,7 +6695,7 @@ h3.nav-previous, h3.nav-next {
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	content: "\f104";
+	/*content: "\f104";*/
 	font-size: 14px !important;
 	font-weight: 700;
 	position: relative;
@@ -6705,7 +6705,7 @@ h3.nav-previous, h3.nav-next {
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	content: "\f105";
+	/*content: "\f105";*/
 	font-size: 14px !important;
 	font-weight: 700;
 	position: relative;

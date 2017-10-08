@@ -1,0 +1,25 @@
+
+<h4>NEW CONTACT MESSAGE - HOP CONTRACTING WEB</h4>
+
+<p>We have received a new contact message from our website</p>
+
+<br/>
+
+<p><b>FirstName:</b>  {{ contact.first_name }} </p>
+<p><b>LastName:</b>  {{ contact.last_name }} </p>
+<p><b>Email:</b>  {{ contact.email }} </p>
+<p>
+    <b>Type:</b> {{ contact.get_contact_type_name }}
+</p>
+<p>
+    <b>Message:</b>
+    <br/> {{ contact.message }}
+</p>
+<p>
+    <b>Date:</b>  {{ contact.created|date:'m-d-Y' }} ({{ contact.created|date:'H:i' }})
+</p>
+<br/>
+<p>
+    Total of Contacts: <b>{{ total }}</b>
+</p>
+
