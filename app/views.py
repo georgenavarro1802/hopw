@@ -96,7 +96,7 @@ def contact(request):
         if 'contact-message' in request.POST and request.POST['contact-message']:
             message = request.POST['contact-message']
 
-        if first_name and last_name and email and type and message:
+        if first_name and last_name and email and message:
 
             # Create contact and data related with
             contact = Contacts(first_name=first_name,
