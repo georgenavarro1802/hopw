@@ -239,41 +239,55 @@
                 </div>
                 <div class="pull-right">
                     <ul class="nav navbar-nav social-btns">
-                        <li>
-                            <a href="{% if company.facebook %}{{ company.facebook }}{% else %}#{% endif %}" target="_blank" >
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% if company.twitter %}{{ company.twitter }}{% else %}#{% endif %}" target="_blank" >
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% if company.youtube %}{{ company.youtube }}{% else %}#{% endif %}" target="_blank" >
-                                <i class="fa fa-youtube"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% if company.instagram %}{{ company.instagram }}{% else %}#{% endif %}" target="_blank" >
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% if company.pinterest %}{{ company.pinterest }}{% else %}#{% endif %}" target="_blank" >
-                                <i class="fa fa-pinterest"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% if company.google %}{{ company.google }}{% else %}#{% endif %}" target="_blank" >
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% if company.linkedin %}{{ company.linkedin }}{% else %}#{% endif %}" target="_blank" >
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </li>
+                        {% if company.facebook %}
+                            <li>
+                                <a href="{{ company.facebook }}" target="_blank" >
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if company.twitter %}
+                            <li>
+                                <a href="{{ company.twitter }}" target="_blank" >
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if company.youtube %}
+                            <li>
+                                <a href="{{ company.youtube }}" target="_blank" >
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if company.instagram %}
+                            <li>
+                                <a href="{{ company.instagram }}" target="_blank" >
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if company.pinterest %}
+                            <li>
+                                <a href="{{ company.pinterest }}" target="_blank" >
+                                    <i class="fa fa-pinterest"></i>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if company.google %}
+                            <li>
+                                <a href="{{ company.google }}" target="_blank" >
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if company.linkedin %}
+                            <li>
+                                <a href="{{ company.linkedin }}" target="_blank" >
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -2215,41 +2229,55 @@
                             </div>
 
                             <ul class="footer-socials">
-                                <li>
-                                    <a href="{% if company.facebook %}{{ company.facebook }}{% else %}#{% endif %}" target="_blank" >
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% if company.twitter %}{{ company.twitter }}{% else %}#{% endif %}" target="_blank" >
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% if company.youtube %}{{ company.youtube }}{% else %}#{% endif %}" target="_blank" >
-                                        <i class="fa fa-youtube"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% if company.instagram %}{{ company.instagram }}{% else %}#{% endif %}" target="_blank" >
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% if company.pinterest %}{{ company.pinterest }}{% else %}#{% endif %}" target="_blank" >
-                                        <i class="fa fa-pinterest"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% if company.google %}{{ company.google }}{% else %}#{% endif %}" target="_blank" >
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{% if company.linkedin %}{{ company.linkedin }}{% else %}#{% endif %}" target="_blank" >
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
+                                {% if company.facebook %}
+                                    <li>
+                                        <a href="{{ company.facebook }}" target="_blank" >
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% if company.twitter %}
+                                    <li>
+                                        <a href="{{ company.twitter }}" target="_blank" >
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% if company.youtube %}
+                                    <li>
+                                        <a href="{{ company.youtube }}" target="_blank" >
+                                            <i class="fa fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% if company.instagram %}
+                                    <li>
+                                        <a href="{{ company.instagram }}" target="_blank" >
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% if company.pinterest %}
+                                    <li>
+                                        <a href="{{ company.pinterest }}" target="_blank" >
+                                            <i class="fa fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% if company.google %}
+                                    <li>
+                                        <a href="{{ company.google }}" target="_blank" >
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% if company.linkedin %}
+                                    <li>
+                                        <a href="{{ company.linkedin }}" target="_blank" >
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
