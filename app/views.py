@@ -96,21 +96,25 @@ def contact(request):
         if 'contact-message' in request.POST and request.POST['contact-message']:
             message = request.POST['contact-message']
 
-        # Create contact and data related with
-        contact = Contacts(first_name=first_name,
-                           last_name=last_name,
-                           email=email,
-                           contact_type=type,
-                           message=message,
-                           created=datetime.datetime.now())
-        contact.save()
+        if first_name and last_name and email and type and message:
 
-        if EMAIL_ACTIVE:
-            send_html_mail("HOP Website - New Contact", "contact.html",
-                           {'contact': contact, 'total': Contacts.objects.count()},
-                           SUSCRIPCION_EMAILS)
+            # Create contact and data related with
+            contact = Contacts(first_name=first_name,
+                               last_name=last_name,
+                               email=email,
+                               contact_type=type,
+                               message=message,
+                               created=datetime.datetime.now())
+            contact.save()
 
-            return ok_json(data={'message': 'Your message has been received successfully. '
-                                            'Your opinion is important for us. We will be in touch soon. Thanks'})
+            if EMAIL_ACTIVE:
+                send_html_mail("HOP Website - New Contact", "contact.html",
+                               {'contact': contact, 'total': Contacts.objects.count()},
+                               SUSCRIPCION_EMAILS)
+
+                return ok_json(data={'message': 'Your message has been received successfully. '
+                                                'Your opinion is important for us. We will be in touch soon. Thanks'})
+
+        return bad_json(message='Please fill all the fields before to send the form, thanks.')
 
     return bad_json(error=0)
