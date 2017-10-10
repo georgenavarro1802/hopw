@@ -2,7 +2,8 @@ import datetime
 from django.shortcuts import render
 
 from app.functions import ok_json, send_html_mail, bad_json
-from app.models import Aboutus, Services, Whyus, Projects, Team, Newsletter, Clients, CONTACT_TYPES, Company, Contacts
+from app.models import Aboutus, Services, Whyus, Projects, Team, Newsletter, Clients, CONTACT_TYPES, Company, Contacts, \
+    Construction
 from hopw.settings import EMAIL_ACTIVE, SUSCRIPCION_EMAILS
 
 
@@ -118,3 +119,18 @@ def contact(request):
         return bad_json(message='Please fill all the fields before to send the form, thanks.')
 
     return bad_json(error=0)
+
+
+def construction(request):
+
+    # Company
+    company = Company.objects.all()[0] if Company.objects.exists() else None
+
+    # Construction
+    construction = Construction.objects.all()[0] if Construction.objects.exists() else None
+
+    return render(request, 'construction.html',
+                  {
+                      'company': company,
+                      'construction': construction
+                  })

@@ -354,8 +354,6 @@
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
 }
 
 
@@ -384,7 +382,7 @@ img.rsImg {
 
 .grab-cursor {
 
-  cursor: url(../../images/royalslider/grab.png) 8 8, move;
+  cursor: url(/static/images/grab.png) 8 8, move;
 
 }
 
@@ -392,7 +390,7 @@ img.rsImg {
 
 .grabbing-cursor {
 
-  cursor: url(../../images/royalslider/grabbing.png) 8 8, move;
+  cursor: url(/static/images/grabbing.png) 8 8, move;
 
 }
 
@@ -422,7 +420,7 @@ img.rsImg {
 
   z-index: 20;
 
-  background: url(../../images/royalslider/blank.gif);
+  /*background: url(/static/images/blank.gif);*/
 
 }
 
@@ -434,7 +432,7 @@ img.rsImg {
 
   height: 20px;
 
-  background-image: url(../../images/royalslider/preloader-white.gif);
+  background-image: url(/static/images/preloader-white.gif);
 
   left: 50%;
 
@@ -592,7 +590,7 @@ img.rsImg {
 
   cursor: pointer;
 
-  background: url("../../images/royalslider/rs-default.png");
+  background: url("/static/images/rs-default.png");
 
   background-color: #000;
 
@@ -984,7 +982,7 @@ img.rsImg {
 
   cursor: pointer;
 
-  background: url("../../images/royalslider/rs-default.png");
+  background: url("/static/images/rs-default.png");
 
 }
 
@@ -1072,7 +1070,7 @@ img.rsImg {
 
   height: 32px;
 
-  background: url("../../images/royalslider/rs-default.png") 0 0;
+  background: url("/static/images/rs-default.png") 0 0;
 
   background-color: #000;
 
@@ -1210,7 +1208,7 @@ img.rsImg {
 
   cursor: pointer;
 
-  background: url("../../images/royalslider/rs-minimal-white.png") transparent;
+  background: url("/static/images/rs-minimal-white.png") transparent;
 
   border-radius: 2px;
 
@@ -1384,7 +1382,7 @@ img.rsImg {
 
   height: 32px;
 
-  background: url("../../images/royalslider/rs-minimal-white.png") 0 0 transparent;
+  background: url("/static/images/rs-minimal-white.png") 0 0 transparent;
 
 }
 
@@ -1442,15 +1440,11 @@ img.rsImg {
 
   font-size: 12px;
 
-  background: black;
-
   color: white;
 
-  background-color: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.75);
 
   padding: 0px 10px;
-
-  position: absolute;
 
   left: 12px;
 

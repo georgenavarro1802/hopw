@@ -34,6 +34,9 @@ urlpatterns = [
     # Contacts
     url(r'^contact$', views.contact, name='contact'),
 
+    # Construction
+    url(r'^construction$', views.construction, name='construction'),
+
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

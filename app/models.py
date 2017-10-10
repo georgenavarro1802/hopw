@@ -365,19 +365,23 @@ class Clients(models.Model):
     header2 = models.CharField(max_length=200, blank=True, null=True, verbose_name='Header 2')
 
     # Client 1
-    icon1_image = models.FileField(upload_to='clients/', max_length=100, blank=True, null=True, verbose_name='Image - Client 1')
+    icon1_image = models.FileField(upload_to='clients/', max_length=100, blank=True, null=True,
+                                   verbose_name='Image - Client 1')
     icon1_url = models.CharField(max_length=300, blank=True, null=True, verbose_name='URL - Client 1')
 
     # Client 2
-    icon2_image = models.FileField(upload_to='clients/', max_length=100, blank=True, null=True, verbose_name='Image - Client 2')
+    icon2_image = models.FileField(upload_to='clients/', max_length=100, blank=True, null=True,
+                                   verbose_name='Image - Client 2')
     icon2_url = models.CharField(max_length=300, blank=True, null=True, verbose_name='URL - Client 2')
 
     # Client 3
-    icon3_image = models.FileField(upload_to='clients/', max_length=100, blank=True, null=True, verbose_name='Image - Client 3')
+    icon3_image = models.FileField(upload_to='clients/', max_length=100, blank=True, null=True,
+                                   verbose_name='Image - Client 3')
     icon3_url = models.CharField(max_length=300, blank=True, null=True, verbose_name='URL - Client 3')
 
     # Client 4
-    icon4_image = models.FileField(upload_to='clients/', max_length=100, blank=True, null=True, verbose_name='Image - Client 4')
+    icon4_image = models.FileField(upload_to='clients/', max_length=100, blank=True, null=True,
+                                   verbose_name='Image - Client 4')
     icon4_url = models.CharField(max_length=300, blank=True, null=True, verbose_name='URL - Client 4')
 
     def __str__(self):
@@ -469,3 +473,72 @@ class Company(models.Model):
         verbose_name = 'COMPANY'
         verbose_name_plural = 'COMPANY'
         db_table = 'company'
+
+
+class Construction(models.Model):
+    header1 = models.CharField(max_length=200, blank=True, null=True, verbose_name='Header 1')
+    header2 = models.CharField(max_length=200, blank=True, null=True, verbose_name='Header 2')
+    header_image = models.FileField(upload_to='constructions/', max_length=100, blank=True, null=True, verbose_name='Header Image')
+
+    # Construction little images slide
+    image1 = models.FileField(upload_to='constructions/', max_length=100, blank=True, null=True, verbose_name='Image 1')
+    image2 = models.FileField(upload_to='constructions/', max_length=100, blank=True, null=True, verbose_name='Image 2')
+    image3 = models.FileField(upload_to='constructions/', max_length=100, blank=True, null=True, verbose_name='Image 3')
+
+    subservices = models.TextField(blank=True, null=True, verbose_name='Services (separated by semicolon)')
+
+    # Concept 1
+    concept_title_1 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 1')
+    concept_description_1 = models.TextField(blank=True, null=True, verbose_name='Concept Description 1')
+
+    # Concept 2
+    concept_title_2 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 2')
+    concept_description_2 = models.TextField(blank=True, null=True, verbose_name='Concept Description 2')
+
+    # Concept 3
+    concept_title_3 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 3')
+    concept_description_3 = models.TextField(blank=True, null=True, verbose_name='Concept Description 3')
+
+    # Concept 4
+    concept_title_4 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 4')
+    concept_description_4 = models.TextField(blank=True, null=True, verbose_name='Concept Description 4')
+
+    def __str__(self):
+        return "Service - Construction"
+
+    class Meta:
+        verbose_name = 'SERVICE - CONSTRUCTION'
+        verbose_name_plural = 'SERVICES - CONSTRUCTION'
+        db_table = 'construction'
+
+    def download_header_image(self):
+        if self.header_image:
+            return self.header_image.url
+        return ''
+
+    def download_image1(self):
+        if self.image1:
+            return self.image1.url
+        return ''
+
+    def download_image2(self):
+        if self.image2:
+            return self.image2.url
+        return ''
+
+    def download_image3(self):
+        if self.image3:
+            return self.image3.url
+        return ''
+
+    def get_services_list(self):
+        return self.subservices.split(';')
+
+    def save(self, force_insert=False, force_update=False, using=None, **kwargs):
+        self.header1 = self.header1.upper()
+        self.header2 = self.header2.upper()
+        self.concept_title_1 = self.concept_title_1.upper()
+        self.concept_title_2 = self.concept_title_2.upper()
+        self.concept_title_3 = self.concept_title_3.upper()
+        self.concept_title_4 = self.concept_title_4.upper()
+        super(Construction, self).save(force_insert, force_update, using)

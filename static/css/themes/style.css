@@ -4157,6 +4157,7 @@ MC4WP form
 /*paralax*/
 .page-header, .top-footer {
 	position: relative;
+	margin: 0px!important;
 	overflow: hidden;
 }
 .background-image {
@@ -4174,9 +4175,7 @@ MC4WP form
 	left: 0;
 	background-size: cover;
 	z-index: 0;
-	background-repeat: no-repeat;
-	background-position: 50% 0;
-	background-attachment: scroll;
+    background: no-repeat scroll 50% 0;
 }
 @media (min-width: 1025px) {
 	#content-wrapper.fixed-footer {

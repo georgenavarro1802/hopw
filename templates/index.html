@@ -54,7 +54,6 @@
 
     <link rel='stylesheet' id='webuild-bootstrap-css'  href="{% static 'css/bootstrap.min.css' %}" type='text/css' media='all' />
     <link rel='stylesheet' id='pro-woocommerce-css'  href="{% static 'css/vendor/woocommerce.css' %}" type='text/css' media='all' />
-    <link rel='stylesheet' id='webuild-royalslider-css'  href="{% static 'css/vendor/royalslider.css' %}" type='text/css' media='all' />
     <link rel='stylesheet' id='webuild-pro-framework-css'  href="{% static 'css/vendor/pro-framework.css' %}" type='text/css' media='all' />
     <link rel='stylesheet' id='webuild-pro-fancybox-css'  href="{% static 'css/vendor/fancybox.css' %}" type='text/css' media='all' />
     <link rel='stylesheet' id='webuild-shortcodes-css'  href="{% static 'css/vendor/shortcodes.css' %}" type='text/css' media='all' />
@@ -467,7 +466,8 @@
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]" style="z-index: 5;">
 
-                            <img src="{% static 'images/roulette.png' %}" alt="" data-ww="214px" data-hh="205px" width="214" height="205" data-no-retina>
+                            <img src="{% static 'images/roulette.png' %}" alt="" data-ww="214px" data-hh="205px" width="214" height="205" data-no-retina>#}
+
                         </div>
                     </li>
                 </ul>
@@ -797,7 +797,12 @@
                                                             <p>{{ service.icon1_description }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="ult-spacer spacer-service" data-id="service" data-height="" data-height-mobile="25" data-height-tab="" data-height-tab-portrait="25" data-height-mobile-landscape="25" style="clear:both;display:block;"></div>
+                                                    <div class="ubtn-ctn-left">
+                                                        <button type="button" id="btn-construction" onclick="location.href='{% url 'construction' %}'" class="ubtn ult-adjust-bottom-margin ult-responsive ubtn-normal ubtn-no-hover-bg  none  ubtn-left tooltip-59ac9ce07d208"  data-hover="#2c3e50" data-border-color="#ffffff" data-bg="rgba(224,224,224,0.01)" data-hover-bg="#ffffff" data-border-hover="#ffffff" data-shadow-hover="" data-shadow-click="none" data-responsive-json-new='{"font-size":"desktop:16px;","line-height":""}'  style="font-weight:normal;font-style:normal;border-radius:0px;border-width:1px;border-color:#ffffff;border-style:solid;background: rgba(224,224,224,0.01);color: #ffffff;">
+                                                            <span class="ubtn-hover" style="background-color:#ffffff"></span>
+                                                            <span class="ubtn-data ubtn-text">Read more</span>
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -819,7 +824,12 @@
                                                             {{ service.icon2_description }}
                                                         </div>
                                                     </div>
-                                                    <div class="ult-spacer spacer-service" data-id="service" data-height="" data-height-mobile="25" data-height-tab="" data-height-tab-portrait="25" data-height-mobile-landscape="25" style="clear:both;display:block;"></div>
+                                                    <div class="ubtn-ctn-left">
+                                                        <button type="button" id="btn-remodeling" class="ubtn ult-adjust-bottom-margin ult-responsive ubtn-normal ubtn-no-hover-bg  none  ubtn-left tooltip-59ac9ce07d208"  data-hover="#2c3e50" data-border-color="#ffffff" data-bg="rgba(224,224,224,0.01)" data-hover-bg="#ffffff" data-border-hover="#ffffff" data-shadow-hover="" data-shadow-click="none" data-responsive-json-new='{"font-size":"desktop:16px;","line-height":""}'  style="font-weight:normal;font-style:normal;border-radius:0px;border-width:1px;border-color:#ffffff;border-style:solid;background: rgba(224,224,224,0.01);color: #ffffff;">
+                                                            <span class="ubtn-hover" style="background-color:#ffffff"></span>
+                                                            <span class="ubtn-data ubtn-text">Read more</span>
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -841,14 +851,13 @@
                                                             {{ service.icon3_description }}
                                                         </div>
                                                     </div>
-                                                    {#                                                    <div class=" ubtn-ctn-left ">#}
-                                                    {#                                                        <button type="button" id="ubtn-2456" class="ubtn ult-adjust-bottom-margin ult-responsive ubtn-normal ubtn-no-hover-bg  none  ubtn-left tooltip-59ac9ce07d208"  data-hover="#2c3e50" data-border-color="#ffffff" data-bg="rgba(224,224,224,0.01)" data-hover-bg="#ffffff" data-border-hover="#ffffff" data-shadow-hover="" data-shadow-click="none" data-shadow="" data-shd-shadow=""  data-ultimate-target='#ubtn-2456'  data-responsive-json-new='{"font-size":"desktop:16px;","line-height":""}'  style="font-family:'Lato';font-weight:normal;font-style:normal;border-radius:0px;border-width:1px;border-color:#ffffff;border-style:solid;background: rgba(224,224,224,0.01);color: #ffffff;">#}
-                                                    {#                                                            <span class="ubtn-hover" style="background-color:#ffffff"></span>#}
-                                                    {#                                                            <span class="ubtn-data ubtn-text " >Read more</span>#}
-                                                    {#                                                        </button>#}
-                                                    {#                                                    </div>#}
+                                                    <div class="ubtn-ctn-left">
+                                                        <button type="button" id="btn-voltage" class="ubtn ult-adjust-bottom-margin ult-responsive ubtn-normal ubtn-no-hover-bg  none  ubtn-left tooltip-59ac9ce07d208"  data-hover="#2c3e50" data-border-color="#ffffff" data-bg="rgba(224,224,224,0.01)" data-hover-bg="#ffffff" data-border-hover="#ffffff" data-shadow-hover="" data-shadow-click="none" data-responsive-json-new='{"font-size":"desktop:16px;","line-height":""}'  style="font-weight:normal;font-style:normal;border-radius:0px;border-width:1px;border-color:#ffffff;border-style:solid;background: rgba(224,224,224,0.01);color: #ffffff;">
+                                                            <span class="ubtn-hover" style="background-color:#ffffff"></span>
+                                                            <span class="ubtn-data ubtn-text">Read more</span>
+                                                        </button>
+                                                    </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -858,6 +867,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="ult-spacer spacer-service" data-id="service" data-height="" data-height-mobile="25" data-height-tab="" data-height-tab-portrait="25" data-height-mobile-landscape="25" style="clear:both;display:block;"></div>
 
                     <div class="upb_bg_img" data-ultimate-bg="url({% static 'images/1.jpeg' %})" data-image-id="1239" data-ultimate-bg-style="vcpb-vz-jquery" data-bg-img-repeat="repeat" data-bg-img-size="cover" data-bg-img-position="" data-parallx_sense="30" data-bg-override="full" data-bg_img_attach="scroll" data-upb-overlay-color="" data-upb-bg-animation="" data-fadeout="fadeout_row_value" data-bg-animation="left-animation" data-bg-animation-type="h" data-animation-repeat="repeat" data-fadeout-percentage="60" data-parallax-content="parallax_content_value" data-parallax-content-sense="20" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false"  data-custom-vc-row=""  data-vc="5.1.1"  data-is_old_vc=""  data-theme-support=""   data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""    data-seperator="true"  data-seperator-type="triangle_svg_seperator"  data-seperator-shape-size="40"  data-seperator-svg-height="15"  data-seperator-full-width="true" data-seperator-position="top_seperator"  data-seperator-background-color="#fff"  data-icon=""></div>
 
