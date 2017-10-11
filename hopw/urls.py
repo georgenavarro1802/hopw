@@ -37,6 +37,12 @@ urlpatterns = [
     # Construction
     url(r'^construction$', views.construction, name='construction'),
 
+    # Remodeling
+    url(r'^remodeling$', views.remodeling, name='remodeling'),
+
+    # Low Voltage
+    url(r'^voltage$', views.voltage, name='voltage'),
+
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

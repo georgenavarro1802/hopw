@@ -542,3 +542,141 @@ class Construction(models.Model):
         self.concept_title_3 = self.concept_title_3.upper()
         self.concept_title_4 = self.concept_title_4.upper()
         super(Construction, self).save(force_insert, force_update, using)
+
+
+class Remodeling(models.Model):
+    header1 = models.CharField(max_length=200, blank=True, null=True, verbose_name='Header 1')
+    header2 = models.CharField(max_length=200, blank=True, null=True, verbose_name='Header 2')
+    header_image = models.FileField(upload_to='remodeling/', max_length=100, blank=True, null=True, verbose_name='Header Image')
+
+    # Construction little images slide
+    image1 = models.FileField(upload_to='remodeling/', max_length=100, blank=True, null=True, verbose_name='Image 1')
+    image2 = models.FileField(upload_to='remodeling/', max_length=100, blank=True, null=True, verbose_name='Image 2')
+    image3 = models.FileField(upload_to='remodeling/', max_length=100, blank=True, null=True, verbose_name='Image 3')
+
+    subservices = models.TextField(blank=True, null=True, verbose_name='Services (separated by semicolon)')
+
+    # Concept 1
+    concept_title_1 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 1')
+    concept_description_1 = models.TextField(blank=True, null=True, verbose_name='Concept Description 1')
+
+    # Concept 2
+    concept_title_2 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 2')
+    concept_description_2 = models.TextField(blank=True, null=True, verbose_name='Concept Description 2')
+
+    # Concept 3
+    concept_title_3 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 3')
+    concept_description_3 = models.TextField(blank=True, null=True, verbose_name='Concept Description 3')
+
+    # Concept 4
+    concept_title_4 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 4')
+    concept_description_4 = models.TextField(blank=True, null=True, verbose_name='Concept Description 4')
+
+    def __str__(self):
+        return "Service - Remodeling"
+
+    class Meta:
+        verbose_name = 'SERVICE - REMODELING'
+        verbose_name_plural = 'SERVICES - REMODELING'
+        db_table = 'remodeling'
+
+    def download_header_image(self):
+        if self.header_image:
+            return self.header_image.url
+        return ''
+
+    def download_image1(self):
+        if self.image1:
+            return self.image1.url
+        return ''
+
+    def download_image2(self):
+        if self.image2:
+            return self.image2.url
+        return ''
+
+    def download_image3(self):
+        if self.image3:
+            return self.image3.url
+        return ''
+
+    def get_services_list(self):
+        return self.subservices.split(';')
+
+    def save(self, force_insert=False, force_update=False, using=None, **kwargs):
+        self.header1 = self.header1.upper()
+        self.header2 = self.header2.upper()
+        self.concept_title_1 = self.concept_title_1.upper()
+        self.concept_title_2 = self.concept_title_2.upper()
+        self.concept_title_3 = self.concept_title_3.upper()
+        self.concept_title_4 = self.concept_title_4.upper()
+        super(Remodeling, self).save(force_insert, force_update, using)
+
+
+class Voltage(models.Model):
+    header1 = models.CharField(max_length=200, blank=True, null=True, verbose_name='Header 1')
+    header2 = models.CharField(max_length=200, blank=True, null=True, verbose_name='Header 2')
+    header_image = models.FileField(upload_to='voltage/', max_length=100, blank=True, null=True, verbose_name='Header Image')
+
+    # Construction little images slide
+    image1 = models.FileField(upload_to='voltage/', max_length=100, blank=True, null=True, verbose_name='Image 1')
+    image2 = models.FileField(upload_to='voltage/', max_length=100, blank=True, null=True, verbose_name='Image 2')
+    image3 = models.FileField(upload_to='voltage/', max_length=100, blank=True, null=True, verbose_name='Image 3')
+
+    subservices = models.TextField(blank=True, null=True, verbose_name='Services (separated by semicolon)')
+
+    # Concept 1
+    concept_title_1 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 1')
+    concept_description_1 = models.TextField(blank=True, null=True, verbose_name='Concept Description 1')
+
+    # Concept 2
+    concept_title_2 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 2')
+    concept_description_2 = models.TextField(blank=True, null=True, verbose_name='Concept Description 2')
+
+    # Concept 3
+    concept_title_3 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 3')
+    concept_description_3 = models.TextField(blank=True, null=True, verbose_name='Concept Description 3')
+
+    # Concept 4
+    concept_title_4 = models.CharField(max_length=100, blank=True, null=True, verbose_name='Concept Title 4')
+    concept_description_4 = models.TextField(blank=True, null=True, verbose_name='Concept Description 4')
+
+    def __str__(self):
+        return "Service - Low Voltage"
+
+    class Meta:
+        verbose_name = 'SERVICE - LOW VOLTAGE'
+        verbose_name_plural = 'SERVICES - LOW VOLTAGE'
+        db_table = 'voltage'
+
+    def download_header_image(self):
+        if self.header_image:
+            return self.header_image.url
+        return ''
+
+    def download_image1(self):
+        if self.image1:
+            return self.image1.url
+        return ''
+
+    def download_image2(self):
+        if self.image2:
+            return self.image2.url
+        return ''
+
+    def download_image3(self):
+        if self.image3:
+            return self.image3.url
+        return ''
+
+    def get_services_list(self):
+        return self.subservices.split(';')
+
+    def save(self, force_insert=False, force_update=False, using=None, **kwargs):
+        self.header1 = self.header1.upper()
+        self.header2 = self.header2.upper()
+        self.concept_title_1 = self.concept_title_1.upper()
+        self.concept_title_2 = self.concept_title_2.upper()
+        self.concept_title_3 = self.concept_title_3.upper()
+        self.concept_title_4 = self.concept_title_4.upper()
+        super(Voltage, self).save(force_insert, force_update, using)

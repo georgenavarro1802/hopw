@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 from app.functions import ok_json, send_html_mail, bad_json
 from app.models import Aboutus, Services, Whyus, Projects, Team, Newsletter, Clients, CONTACT_TYPES, Company, Contacts, \
-    Construction
+    Construction, Remodeling, Voltage
 from hopw.settings import EMAIL_ACTIVE, SUSCRIPCION_EMAILS
 
 
@@ -129,8 +129,26 @@ def construction(request):
     # Construction
     construction = Construction.objects.all()[0] if Construction.objects.exists() else None
 
-    return render(request, 'construction.html',
-                  {
-                      'company': company,
-                      'construction': construction
-                  })
+    return render(request, 'construction.html', {'company': company, 'construction': construction})
+
+
+def remodeling(request):
+
+    # Company
+    company = Company.objects.all()[0] if Company.objects.exists() else None
+
+    # Construction
+    remodeling = Remodeling.objects.all()[0] if Construction.objects.exists() else None
+
+    return render(request, 'remodeling.html', {'company': company, 'remodeling': remodeling})
+
+
+def voltage(request):
+
+    # Company
+    company = Company.objects.all()[0] if Company.objects.exists() else None
+
+    # Construction
+    voltage = Voltage.objects.all()[0] if Construction.objects.exists() else None
+
+    return render(request, 'voltage.html', {'company': company, 'voltage': voltage})

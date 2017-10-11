@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from app.models import Aboutus, Services, Whyus, Projects, Team, Newsletter, Clients, Contacts, Company, Construction
+from app.models import Aboutus, Services, Whyus, Projects, Team, Newsletter, Clients, Contacts, Company, Construction, \
+    Voltage, Remodeling
 
 
 class AboutusAdmin(admin.ModelAdmin):
@@ -75,3 +76,17 @@ class ConstructionAdmin(admin.ModelAdmin):
     search_fields = ('header1', 'header2')
 
 admin.site.register(Construction, ConstructionAdmin)
+
+
+class RemodelingAdmin(admin.ModelAdmin):
+    list_display = ('header1', 'header2', 'subservices')
+    search_fields = ('header1', 'header2')
+
+admin.site.register(Remodeling, RemodelingAdmin)
+
+
+class VoltageAdmin(admin.ModelAdmin):
+    list_display = ('header1', 'header2', 'subservices')
+    search_fields = ('header1', 'header2')
+
+admin.site.register(Voltage, VoltageAdmin)
