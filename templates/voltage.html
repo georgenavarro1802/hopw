@@ -115,6 +115,11 @@
             font-size:14px !important;
             line-height:80px !important;
         }
+
+        #back-homepage:hover{
+             background-color: yellow;
+            color: orangered!important;
+        }
     </style>
 
     <link rel='stylesheet' id='js_composer_front-css'  href="{% static 'css/assets/js_composer.min.css' %}" type='text/css' media='all' />
@@ -155,6 +160,9 @@
                 <div class="pull-left">
                     <div class="contact-info">
                         <ul class="nav navbar-nav">
+                             <li>
+                                <a href="{% url 'index' %}#services" id="back-homepage" class="btn btn-sm btn-success" style="color: white"><i class="fa fa-home"></i>Back to Homepage</a>
+                            </li>
                             <li>
                                 <a href="javascript:void(0);">
                                     <i class="fa fa-phone"></i>&nbsp; {{ company.phone }}

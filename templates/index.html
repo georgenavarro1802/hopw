@@ -770,7 +770,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="uvc-sub-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-540559ac9ce07c139 .uvc-sub-heading '  data-responsive-json-new='{"font-size":"desktop:16px;","line-height":"desktop:24px;"}'  style="font-family:'Lato';font-weight:300;color:#a1b1bc;">
+                                        <div class="uvc-sub-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-services .uvc-sub-heading '  data-responsive-json-new='{"font-size":"desktop:16px;","line-height":"desktop:24px;"}'  style="font-family:'Lato';font-weight:300;color:#a1b1bc;">
                                             {{ service.header1 }} <br/> {{ service.header2 }}
                                         </div>
                                     </div>
@@ -786,7 +786,7 @@
                                                         <img class="ult-new-ib-img" style="opacity:0.9; height: 250px" alt="" src="{% if service.download_icon1_image %}{{ service.download_icon1_image }}{% endif %}"   />
                                                     </div>
 
-                                                    <div id="ultimate-heading-service1" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-service1 uvc-2864" data-hspacer="no_spacer" data-halign="left" style="text-align:left">
+                                                    <div id="ultimate-heading-service1" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-service1" data-hspacer="no_spacer" data-halign="left" style="text-align:left">
                                                         <div class="uvc-heading-spacer no_spacer"></div>
                                                         <div class="uvc-main-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-service1 h2'  data-responsive-json-new='{"font-size":"desktop:18px;","line-height":"desktop:30px;"}' >
                                                             <h2 style="font-family:'Lato';font-weight:700;color:#ffffff;margin-bottom:15px;">{{ service.icon1_title }}</h2>
@@ -796,11 +796,17 @@
                                                         </div>
                                                     </div>
                                                     <div class="ubtn-ctn-left">
-                                                        <button type="button" id="btn-construction" onclick="window.open('{% url 'construction' %}')" class="ubtn ult-adjust-bottom-margin ult-responsive ubtn-normal ubtn-no-hover-bg  none  ubtn-left tooltip-59ac9ce07d208"  data-hover="#2c3e50" data-border-color="#ffffff" data-bg="rgba(224,224,224,0.01)" data-hover-bg="#ffffff" data-border-hover="#ffffff" data-shadow-hover="" data-shadow-click="none" data-responsive-json-new='{"font-size":"desktop:16px;","line-height":""}'  style="font-weight:normal;font-style:normal;border-radius:0px;border-width:1px;border-color:#ffffff;border-style:solid;background: rgba(224,224,224,0.01);color: #ffffff;">
+                                                        <button type="button" id="btn-construction" class="btn ubtn ult-adjust-bottom-margin ult-responsive ubtn-normal ubtn-no-hover-bg  none  ubtn-left tooltip-59ac9ce07d208"  data-hover="#2c3e50" data-border-color="#ffffff" data-bg="rgba(224,224,224,0.01)" data-hover-bg="#ffffff" data-border-hover="#ffffff" data-shadow-hover="" data-shadow-click="none" data-responsive-json-new='{"font-size":"desktop:16px;","line-height":""}'  style="font-weight:normal;font-style:normal;border-radius:0px;border-width:1px;border-color:#ffffff;border-style:solid;background: rgba(224,224,224,0.01);color: #ffffff;">
                                                             <span class="ubtn-hover" style="background-color:#ffffff"></span>
                                                             <span class="ubtn-data ubtn-text"><i class="fa fa-book"></i> Read more</span>
                                                         </button>
                                                     </div>
+
+                                                    <script>
+                                                        jQuery("#btn-construction").click(function () {
+                                                            location.href = "{% url 'construction' %}";
+                                                        })
+                                                    </script>
                                                 </div>
                                             </div>
                                         </div>
@@ -823,11 +829,18 @@
                                                         </div>
                                                     </div>
                                                     <div class="ubtn-ctn-left">
-                                                        <button type="button" id="btn-remodeling" onclick="window.open('{% url 'remodeling' %}')" class="ubtn ult-adjust-bottom-margin ult-responsive ubtn-normal ubtn-no-hover-bg  none  ubtn-left tooltip-59ac9ce07d208"  data-hover="#2c3e50" data-border-color="#ffffff" data-bg="rgba(224,224,224,0.01)" data-hover-bg="#ffffff" data-border-hover="#ffffff" data-shadow-hover="" data-shadow-click="none" data-responsive-json-new='{"font-size":"desktop:16px;","line-height":""}'  style="font-weight:normal;font-style:normal;border-radius:0px;border-width:1px;border-color:#ffffff;border-style:solid;background: rgba(224,224,224,0.01);color: #ffffff;">
+                                                        <button type="button" id="btn-remodeling" class="ubtn ult-adjust-bottom-margin ult-responsive ubtn-normal ubtn-no-hover-bg  none  ubtn-left tooltip-59ac9ce07d208"  data-hover="#2c3e50" data-border-color="#ffffff" data-bg="rgba(224,224,224,0.01)" data-hover-bg="#ffffff" data-border-hover="#ffffff" data-shadow-hover="" data-shadow-click="none" data-responsive-json-new='{"font-size":"desktop:16px;","line-height":""}'  style="font-weight:normal;font-style:normal;border-radius:0px;border-width:1px;border-color:#ffffff;border-style:solid;background: rgba(224,224,224,0.01);color: #ffffff;">
                                                             <span class="ubtn-hover" style="background-color:#ffffff"></span>
                                                             <span class="ubtn-data ubtn-text"><i class="fa fa-book"></i> Read more</span>
                                                         </button>
                                                     </div>
+
+                                                    <script>
+                                                        jQuery("#btn-remodeling").click(function () {
+                                                            location.href = "{% url 'remodeling' %}";
+                                                        })
+                                                    </script>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -850,11 +863,17 @@
                                                         </div>
                                                     </div>
                                                     <div class="ubtn-ctn-left">
-                                                        <button type="button" id="btn-voltage" onclick="window.open('{% url 'voltage' %}')" class="ubtn ult-adjust-bottom-margin ult-responsive ubtn-normal ubtn-no-hover-bg  none  ubtn-left tooltip-59ac9ce07d208"  data-hover="#2c3e50" data-border-color="#ffffff" data-bg="rgba(224,224,224,0.01)" data-hover-bg="#ffffff" data-border-hover="#ffffff" data-shadow-hover="" data-shadow-click="none" data-responsive-json-new='{"font-size":"desktop:16px;","line-height":""}'  style="font-weight:normal;font-style:normal;border-radius:0px;border-width:1px;border-color:#ffffff;border-style:solid;background: rgba(224,224,224,0.01);color: #ffffff;">
+                                                        <button type="button" id="btn-voltage" class="ubtn ult-adjust-bottom-margin ult-responsive ubtn-normal ubtn-no-hover-bg  none  ubtn-left tooltip-59ac9ce07d208"  data-hover="#2c3e50" data-border-color="#ffffff" data-bg="rgba(224,224,224,0.01)" data-hover-bg="#ffffff" data-border-hover="#ffffff" data-shadow-hover="" data-shadow-click="none" data-responsive-json-new='{"font-size":"desktop:16px;","line-height":""}'  style="font-weight:normal;font-style:normal;border-radius:0px;border-width:1px;border-color:#ffffff;border-style:solid;background: rgba(224,224,224,0.01);color: #ffffff;">
                                                             <span class="ubtn-hover" style="background-color:#ffffff"></span>
                                                             <span class="ubtn-data ubtn-text"><i class="fa fa-book"></i> Read more</span>
                                                         </button>
                                                     </div>
+
+                                                    <script>
+                                                        jQuery("#btn-voltage").click(function () {
+                                                            location.href = "{% url 'voltage' %}";
+                                                        })
+                                                    </script>
                                                 </div>
                                             </div>
                                         </div>

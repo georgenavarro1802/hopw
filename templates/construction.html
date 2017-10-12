@@ -115,6 +115,11 @@
             font-size:14px !important;
             line-height:80px !important;
         }
+
+        #back-homepage:hover{
+             background-color: yellow;
+            color: orangered!important;
+        }
     </style>
 
     <link rel='stylesheet' id='js_composer_front-css'  href="{% static 'css/assets/js_composer.min.css' %}" type='text/css' media='all' />
@@ -156,6 +161,9 @@
                     <div class="contact-info">
                         <ul class="nav navbar-nav">
                             <li>
+                                <a href="{% url 'index' %}#services" id="back-homepage" class="btn btn-sm btn-success" style="color: white"><i class="fa fa-home"></i>Back to Homepage</a>
+                            </li>
+                            <li>
                                 <a href="javascript:void(0);">
                                     <i class="fa fa-phone"></i>&nbsp; {{ company.phone }}
                                 </a>
@@ -170,6 +178,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="pull-right">
                     <ul class="nav navbar-nav social-btns">
                         {% if company.facebook %}
@@ -229,12 +238,10 @@
 
     </header>
 
-    <!-- #masthead -->
-
-    <div class="page-title-cont container-fluid" >
+    <div class="page-title-cont container-fluid">
         <div class="row">
             <div class="page-header">
-                <div class="background-image" style="background-image:url({{ construction.download_header_image }});" data-image-type="parallax" data-stellar-ratio="0.5" ></div>
+                <div class="background-image" style="background-image:url({% if construction.header_image %}{{ construction.download_header_image }}{% endif %});" data-image-type="parallax" data-stellar-ratio="0.5" ></div>
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
@@ -252,12 +259,12 @@
 
     <div class="container cont-padding">
         <div class="row">
-
             <div class="col-md-9">
                 <div class="page-content">
-                    <div class="vc_row wpb_row vc_row-fluid vc_custom_1426847791773" >
+                    <div class="vc_row wpb_row vc_row-fluid" >
                         <div class="wpb_column vc_column_container vc_col-sm-6">
                             <div class="vc_column-inner ">
+
                                 <div class="wpb_wrapper">
                                     <div class="pro-responsive-slider pro-fluid-border">
 
@@ -300,8 +307,6 @@
                                         </script><!-- /post-royalslider -->
                                     </div>
 
-                                    <div class="ult-spacer spacer-construction" data-id="construction" data-height="0" data-height-mobile="" data-height-tab="30" data-height-tab-portrait="30" data-height-mobile-landscape="" style="clear:both;display:block;"></div>
-
                                 </div>
                             </div>
                         </div>
@@ -310,7 +315,7 @@
                             <div class="vc_column-inner ">
                                 <div class="wpb_wrapper">
 
-                                    <div id="ultimate-heading-services" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-services uvc-8034 " data-hspacer="no_spacer"  data-halign="left" style="text-align:left">
+                                    <div id="ultimate-heading-services" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-services" data-hspacer="no_spacer"  data-halign="left" style="text-align:left">
 
                                         <div class="uvc-main-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-services h2'  data-responsive-json-new='{"font-size":"desktop:22px;","line-height":""}' >
                                             <h2 style="font-weight:900;margin-bottom:20px;">Services</h2>
