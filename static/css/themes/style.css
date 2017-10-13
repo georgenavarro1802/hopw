@@ -4111,7 +4111,7 @@ MC4WP form
 	display: none;
 }
 .transparent-header #top-menu , #header-sticky.transparent-header{
-	background-color: transparent !important;
+	background-color:#FFFFFF !important;
 	border-color: transparent !important;
 }
 #header-sticky .logo-inline-menu {
