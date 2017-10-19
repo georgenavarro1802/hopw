@@ -15,7 +15,7 @@
         }
     </style>
 
-    <meta name="description" content="HOP Contracting Website"/>
+    <meta name="description" content="HOP Contracting Website - Construction Service"/>
     <meta name="robots" content="noodp"/>
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
@@ -117,7 +117,7 @@
         }
 
         #back-homepage:hover{
-             background-color: yellow;
+            background-color: yellow;
             color: orangered!important;
         }
     </style>
@@ -239,261 +239,316 @@
     </header>
 
     <div class="page-title-cont container-fluid">
+
         <div class="row">
             <div class="page-header">
-                <div class="background-image" style="background-image:url({% if construction.header_image %}{{ construction.download_header_image }}{% endif %});" data-image-type="parallax" data-stellar-ratio="0.5" ></div>
+
+                {% if construction %}
+                    <div class="background-image" style="background-image:url({% if construction.header_image %}{{ construction.download_header_image }}{% endif %});" data-image-type="parallax" data-stellar-ratio="0.5" ></div>
+                {% endif %}
+                {% if remodeling %}
+                    <div class="background-image" style="background-image:url({% if remodeling.header_image %}{{ remodeling.download_header_image }}{% endif %});" data-image-type="parallax" data-stellar-ratio="0.5" ></div>
+                {% endif %}
+                {% if voltage %}
+                    <div class="background-image" style="background-image:url({% if voltage.header_image %}{{ voltage.download_header_image }}{% endif %});" data-image-type="parallax" data-stellar-ratio="0.5" ></div>
+                {% endif %}
+
                 <div class="overlay"></div>
+
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-md-12 display-table">
                             <div class="title-wrapper fadeIn">
-                                <h1>{{ construction.header1 }}</h1>
-                                <span>{{ construction.header2 }}</span>
+                                <h1>
+                                    {% if construction %}
+                                        {{ construction.header1 }}
+                                    {% endif %}
+                                    {% if remodeling %}
+                                        {{ remodeling.header1 }}
+                                    {% endif %}
+                                    {% if voltage %}
+                                        {{ voltage.header1 }}
+                                    {% endif %}
+                                </h1>
+                                <span>
+                                    {% if construction %}
+                                        {{ construction.header2 }}
+                                    {% endif %}
+                                    {% if remodeling %}
+                                        {{ remodeling.header2 }}
+                                    {% endif %}
+                                    {% if voltage %}
+                                        {{ voltage.header2 }}
+                                    {% endif %}
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container cont-padding">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="page-content">
+        <div class="container cont-padding">
+            <div class="row">
+
+                <!-- SECTION 1 -->
+                <div class="col-md-12">
                     <div class="vc_row wpb_row vc_row-fluid" >
-                        <div class="wpb_column vc_column_container vc_col-sm-6">
-                            <div class="vc_column-inner ">
 
+                        <!-- Imagen -->
+                        <div class="wpb_column vc_column_container vc_col-sm-6 text-center">
+                            <div class="vc_column-inner ">
                                 <div class="wpb_wrapper">
                                     <div class="pro-responsive-slider pro-fluid-border">
-
-                                        <div class="royalslider-token-59dc236f70126 postSlider royalSlider rsMinW rsFill">
-
-                                            <div class="rsContent">
-                                                <a class="rsImg" href="{{ construction.download_image1 }}"></a>
-                                            </div>
-
-                                            <div class="rsContent">
-                                                <a class="rsImg" href="{{ construction.download_image2 }}"></a>
-                                            </div>
-
-                                            <div class="rsContent">
-                                                <a class="rsImg" href="{{ construction.download_image3 }}"></a>
-                                            </div>
-
-                                        </div>
-
-                                        <script type="text/javascript">
-                                            var proj=jQuery;proj.noConflict();
-                                            proj(document).ready(function(){
-                                                "use strict";
-                                                proj(".royalslider-token-59dc236f70126").royalSlider({
-                                                    "slidesSpacing":1,
-                                                    "arrowsNavAutoHide":false,
-                                                    "autoScaleSlider":true,
-                                                    "keyboardNavEnabled":true,
-                                                    "imageScaleMode":"fill",
-                                                    "autoScaleSliderWidth":848,
-                                                    "autoScaleSliderHeight":"600",
-                                                    "transitionType":"move",
-                                                    "loop":"1",
-                                                    "easeInOut":"easeOutExpo",
-                                                    "easeOut":"easeOutExpo",
-                                                    "sliderDrag":true,
-                                                    "autoplay":{"enabled":true,"delay":5000}
-                                                });
-                                            });
-                                        </script><!-- /post-royalslider -->
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="wpb_column vc_column_container vc_col-sm-6">
-                            <div class="vc_column-inner ">
-                                <div class="wpb_wrapper">
-
-                                    <div id="ultimate-heading-services" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-services" data-hspacer="no_spacer"  data-halign="left" style="text-align:left">
-
-                                        <div class="uvc-main-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-services h2'  data-responsive-json-new='{"font-size":"desktop:22px;","line-height":""}' >
-                                            <h2 style="font-weight:900;margin-bottom:20px;">Services</h2>
-                                        </div>
-                                        <div class="uvc-heading-spacer no_spacer"></div>
-                                    </div>
-
-                                    <div class="uavc-list-icon uavc-list-icon-wrapper ult-adjust-bottom-margin">
-                                        <ul class="uavc-list">
-
-                                            {% for s in construction.get_services_list %}
-                                                <li>
-                                                    <div class="uavc-list-content" id="list-icon-wrap-{{ forloop.counter }}">
-                                                        <div class="uavc-list-icon" data-animation="" data-animation-delay="03" style="margin-right:15px;">
-                                                            <div class="ult-just-icon-wrapper">
-                                                                <div class="align-icon" style="text-align:center;">
-                                                                    <div class="aio-icon none" style="color:#f6c41c;font-size:6px;display:inline-block;">
-                                                                        <i class="fa fa-circle" style="font-size: 2em"></i>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <span  data-ultimate-target='#list-icon-wrap-{{ forloop.counter }} .uavc-list-desc'  data-responsive-json-new='{"font-size":"","line-height":""}'  class="uavc-list-desc ult-responsive">
-                                                            {{ s }}
-                                                        </span>
-                                                    </div>
-                                                </li>
-                                            {% endfor %}
-
-                                        </ul>
-
+                                        <img src="{% if construction %}{{ construction.download_image2 }}{% endif %}{% if remodeling %}{{ remodeling.download_image2 }}{% endif %}{% if voltage %}{{ voltage.download_image2 }}{% endif %}" width="80%" height="80%"/>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="wpb_column vc_column_container vc_col-sm-12">
-                            <div class="vc_column-inner ">
-                                <div class="wpb_wrapper">
-                                    <div class="ult-spacer spacer-construction" data-id="construction" data-height="60" data-height-mobile="40" data-height-tab="60" data-height-tab-portrait="60" data-height-mobile-landscape="40" style="clear:both;display:block;"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="vc_row-full-width"></div>
-
-                    <div class="vc_row wpb_row vc_row-fluid" >
+                        <!-- Title and Description -->
                         <div class="wpb_column vc_column_container vc_col-sm-6">
                             <div class="vc_column-inner ">
                                 <div class="wpb_wrapper">
                                     <div id="ultimate-heading-1" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-1" data-hspacer="line_only"  data-halign="left" style="text-align:left">
-                                        <div class="uvc-main-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-1 h2'  data-responsive-json-new='{"font-size":"desktop:22px;","line-height":""}' >
-                                            <h2 style="font-weight:900;margin-bottom:20px;">
-                                                {{ construction.concept_title_1 }}
-                                            </h2>
+                                        <div class="text-center uvc-main-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-1 h2'  data-responsive-json-new='{"font-size":"desktop:22px;","line-height":""}' >
+                                            <h1 style="margin-bottom:20px;">
+                                                {% if construction %}
+                                                    {{ construction.concept_title_1 }}
+                                                {% endif %}
+                                                {% if remodeling %}
+                                                    {{ remodeling.concept_title_1 }}
+                                                {% endif %}
+                                                {% if voltage %}
+                                                    {{ voltage.concept_title_1 }}
+                                                {% endif %}
+                                            </h1>
                                         </div>
-                                        <div class="uvc-heading-spacer line_only" style="height:3px;">
-                                            <span class="uvc-headings-line" style="border: solid #f6c41c;border-bottom-width: 3px;width:50px;"></span>
+                                        <div class="text-center">
+                                            <span class="uvc-headings-line" style="text-align: center; border: solid #f6c41c; border-bottom-width: 3px"></span>
                                         </div>
-                                        <div class="uvc-sub-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-1 .uvc-sub-heading' data-responsive-json-new='{"font-size":"desktop:13px;","line-height":"desktop:24px;"}'  style="font-weight:normal;font-style:normal;margin-top:15px;margin-bottom:30px;">
-                                            {{ construction.concept_description_1 }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="wpb_column vc_column_container vc_col-sm-6">
-                            <div class="vc_column-inner ">
-                                <div class="wpb_wrapper">
-                                    <div id="ultimate-heading-2" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-2" data-hspacer="line_only"  data-halign="left" style="text-align:left">
-                                        <div class="uvc-main-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-2 h2'  data-responsive-json-new='{"font-size":"desktop:22px;","line-height":""}' >
-                                            <h2 style="font-weight:900;margin-bottom:20px;">
-                                                {{ construction.concept_title_2 }}
-                                            </h2>
-                                        </div>
-                                        <div class="uvc-heading-spacer line_only" style="height:3px;">
-                                            <span class="uvc-headings-line" style="border: solid #f6c41c;border-bottom-width: 3px;width:50px;"></span>
-                                        </div>
-                                        <div class="uvc-sub-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-2 .uvc-sub-heading' data-responsive-json-new='{"font-size":"desktop:13px;","line-height":"desktop:24px;"}'  style="font-weight:normal;font-style:normal;margin-top:15px;margin-bottom:30px;">
-                                            {{ construction.concept_description_2 }}
+                                        <div class="uvc-sub-heading ult-responsive"  data-responsive-json-new='{"font-size":"desktop:13px;","line-height":"desktop:24px;"}'  style="font-weight:normal; font-style:normal; font-size: 20px; text-align: justify; margin-top:20px; line-height: 1.7em;">
+                                            {% if construction %}
+                                                {{ construction.concept_description_1 }}
+                                            {% endif %}
+                                            {% if remodeling %}
+                                                {{ remodeling.concept_description_1 }}
+                                            {% endif %}
+                                            {% if voltage %}
+                                                {{ voltage.concept_description_1 }}
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="wpb_column vc_column_container vc_col-sm-12">
-                            <div class="vc_column-inner ">
-                                <div class="wpb_wrapper">
-                                    <div class="ult-spacer spacer-construction" data-id="construction" data-height="25" data-height-mobile="15" data-height-tab="20" data-height-tab-portrait="15" data-height-mobile-landscape="15" style="clear:both;display:block;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wpb_column vc_column_container vc_col-sm-6">
-                            <div class="vc_column-inner ">
-                                <div class="wpb_wrapper">
-                                    <div id="ultimate-heading-3" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-3" data-hspacer="line_only"  data-halign="left" style="text-align:left">
-                                        <div class="uvc-main-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-3 h2'  data-responsive-json-new='{"font-size":"desktop:22px;","line-height":""}' >
-                                            <h2 style="font-weight:900;margin-bottom:20px;">
-                                                {{ construction.concept_title_3 }}
-                                            </h2>
-                                        </div>
-                                        <div class="uvc-heading-spacer line_only" style="height:3px;">
-                                            <span class="uvc-headings-line" style="border: solid #f6c41c;border-bottom-width: 3px;width:50px;"></span>
-                                        </div>
-                                        <div class="uvc-sub-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-3 .uvc-sub-heading' data-responsive-json-new='{"font-size":"desktop:13px;","line-height":"desktop:24px;"}'  style="font-weight:normal;font-style:normal;margin-top:15px;margin-bottom:30px;">
-                                            {{ construction.concept_description_3 }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div> <!-- END vc_row wpb_row vc_row-fluid -->
+                </div> <!-- col-md-12 -->
 
-                        <div class="wpb_column vc_column_container vc_col-sm-6">
-                            <div class="vc_column-inner ">
-                                <div class="wpb_wrapper">
-                                    <div id="ultimate-heading-4" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-4" data-hspacer="line_only"  data-halign="left" style="text-align:left">
-                                        <div class="uvc-main-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-4 h2'  data-responsive-json-new='{"font-size":"desktop:22px;","line-height":""}' >
-                                            <h2 style="font-weight:900;margin-bottom:20px;">
-                                                {{ construction.concept_title_4 }}
-                                            </h2>
-                                        </div>
-                                        <div class="uvc-heading-spacer line_only" style="height:3px;">
-                                            <span class="uvc-headings-line" style="border: solid #f6c41c;border-bottom-width: 3px;width:50px;"></span>
-                                        </div>
-                                        <div class="uvc-sub-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-4 .uvc-sub-heading' data-responsive-json-new='{"font-size":"desktop:13px;","line-height":"desktop:24px;"}'  style="font-weight:normal;font-style:normal;margin-top:15px;margin-bottom:30px;">
-                                            {{ construction.concept_description_4 }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner ">
+                        <div class="wpb_wrapper">
+                            <div class="ult-spacer spacer-construction" data-id="construction" data-height="50" data-height-mobile="25" data-height-tab="20" data-height-tab-portrait="15" data-height-mobile-landscape="15" style="clear:both;display:block;"></div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="vc_row-full-width"></div>
+                <!-- SECTION 2 -->
+                <div class="col-md-12">
+                    <div class="vc_row wpb_row vc_row-fluid" >
 
-                    <div class="vc_row wpb_row vc_row-fluid vc_custom_1432041286912" >
-                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <!-- Title and Description -->
+                        <div class="wpb_column vc_column_container vc_col-sm-6">
                             <div class="vc_column-inner ">
                                 <div class="wpb_wrapper">
-                                    <div class="ult-spacer spacer-concepts" data-id="concepts" data-height="80" data-height-mobile="" data-height-tab="60" data-height-tab-portrait="" data-height-mobile-landscape="40" style="clear:both;display:block;"></div>
+                                    <div id="ultimate-heading-1" class="text-center uvc-heading ult-adjust-bottom-margin ultimate-heading-1" data-hspacer="line_only"  data-halign="left" style="text-align:left">
+                                        <div class="text-center uvc-main-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-1 h2'  data-responsive-json-new='{"font-size":"desktop:22px;","line-height":""}' >
+                                            <h1 style="margin-bottom:20px;">
+                                                {% if construction %}
+                                                    {{ construction.concept_title_2 }}
+                                                {% endif %}
+                                                {% if remodeling %}
+                                                    {{ remodeling.concept_title_2 }}
+                                                {% endif %}
+                                                {% if voltage %}
+                                                    {{ voltage.concept_title_2 }}
+                                                {% endif %}
+                                            </h1>
+                                        </div>
+                                        <div class="uvc-heading-spacer line_only">
+                                            <span class="uvc-headings-line" style="border: solid #f6c41c; border-bottom-width: 3px"></span>
+                                        </div>
+                                        <div class="uvc-sub-heading ult-responsive"  data-responsive-json-new='{"font-size":"desktop:13px;","line-height":"desktop:24px;"}'  style="font-weight:normal; font-style:normal; font-size: 20px; text-align: justify; margin-top:20px; line-height: 1.7em;">
+                                            {% if construction %}
+                                                {{ construction.concept_description_2 }}
+                                            {% endif %}
+                                            {% if remodeling %}
+                                                {{ remodeling.concept_description_2 }}
+                                            {% endif %}
+                                            {% if voltage %}
+                                                {{ voltage.concept_description_2 }}
+                                            {% endif %}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Imagen -->
+                        <div class="wpb_column vc_column_container vc_col-sm-6 text-center">
+                            <div class="vc_column-inner ">
+                                <div class="wpb_wrapper">
+                                    <div class="pro-responsive-slider pro-fluid-border">
+                                        <img src="{% if construction %}{{ construction.download_image2 }}{% endif %}{% if remodeling %}{{ remodeling.download_image2 }}{% endif %}{% if voltage %}{{ voltage.download_image2 }}{% endif %}" width="80%" height="80%"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- END vc_row wpb_row vc_row-fluid -->
+                </div> <!-- col-md-12 -->
+
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner ">
+                        <div class="wpb_wrapper">
+                            <div class="ult-spacer spacer-construction" data-id="construction" data-height="50" data-height-mobile="25" data-height-tab="20" data-height-tab-portrait="15" data-height-mobile-landscape="15" style="clear:both;display:block;"></div>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="vc_row-full-width"></div><!-- Row Backgrounds -->
+                <!-- SECTION 3 -->
+                <div class="col-md-12">
+                    <div class="vc_row wpb_row vc_row-fluid" >
 
+                        <!-- Imagen -->
+                        <div class="wpb_column vc_column_container vc_col-sm-6 text-center">
+                            <div class="vc_column-inner ">
+                                <div class="wpb_wrapper">
+                                    <div class="pro-responsive-slider pro-fluid-border">
+                                        <img src="{% if construction %}{{ construction.download_image2 }}{% endif %}{% if remodeling %}{{ remodeling.download_image2 }}{% endif %}{% if voltage %}{{ voltage.download_image2 }}{% endif %}" width="80%" height="80%"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Title and Description -->
+                        <div class="wpb_column vc_column_container vc_col-sm-6">
+                            <div class="vc_column-inner ">
+                                <div class="wpb_wrapper">
+                                    <div id="ultimate-heading-1" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-1" data-hspacer="line_only"  data-halign="left" style="text-align:left">
+                                        <div class="text-center uvc-main-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-1 h2'  data-responsive-json-new='{"font-size":"desktop:22px;","line-height":""}' >
+                                            <h1 style="margin-bottom:20px;">
+                                                {% if construction %}
+                                                    {{ construction.concept_title_3 }}
+                                                {% endif %}
+                                                {% if remodeling %}
+                                                    {{ remodeling.concept_title_3 }}
+                                                {% endif %}
+                                                {% if voltage %}
+                                                    {{ voltage.concept_title_3 }}
+                                                {% endif %}
+                                            </h1>
+                                        </div>
+                                        <div class="uvc-heading-spacer line_only">
+                                            <span class="uvc-headings-line" style="border: solid #f6c41c; border-bottom-width: 3px"></span>
+                                        </div>
+                                        <div class="uvc-sub-heading ult-responsive"  data-responsive-json-new='{"font-size":"desktop:13px;","line-height":"desktop:24px;"}'  style="font-weight:normal; font-style:normal; font-size: 20px; text-align: justify; margin-top:20px; line-height: 1.7em;">
+                                            {% if construction %}
+                                                {{ construction.concept_description_3 }}
+                                            {% endif %}
+                                            {% if remodeling %}
+                                                {{ remodeling.concept_description_3 }}
+                                            {% endif %}
+                                            {% if voltage %}
+                                                {{ voltage.concept_description_3 }}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- END vc_row wpb_row vc_row-fluid -->
+                </div> <!-- col-md-12 -->
+
+                <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner ">
+                        <div class="wpb_wrapper">
+                            <div class="ult-spacer spacer-construction" data-id="construction" data-height="50" data-height-mobile="25" data-height-tab="20" data-height-tab-portrait="15" data-height-mobile-landscape="15" style="clear:both;display:block;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 4 -->
+                <div class="col-md-12">
+                    <div class="vc_row wpb_row vc_row-fluid" >
+
+                        <!-- Title and Description -->
+                        <div class="wpb_column vc_column_container vc_col-sm-6">
+                            <div class="vc_column-inner ">
+                                <div class="wpb_wrapper">
+                                    <div id="ultimate-heading-1" class="uvc-heading ult-adjust-bottom-margin ultimate-heading-1" data-hspacer="line_only"  data-halign="left" style="text-align:left">
+                                        <div class="text-center uvc-main-heading ult-responsive"  data-ultimate-target='.uvc-heading.ultimate-heading-1 h2'  data-responsive-json-new='{"font-size":"desktop:22px;","line-height":""}' >
+                                            <h1 style="margin-bottom:20px;">
+                                                {% if construction %}
+                                                    {{ construction.concept_title_4 }}
+                                                {% endif %}
+                                                {% if remodeling %}
+                                                    {{ remodeling.concept_title_4 }}
+                                                {% endif %}
+                                                {% if voltage %}
+                                                    {{ voltage.concept_title_4 }}
+                                                {% endif %}
+                                            </h1>
+                                        </div>
+                                        <div class="uvc-heading-spacer line_only">
+                                            <span class="uvc-headings-line" style="border: solid #f6c41c; border-bottom-width: 3px"></span>
+                                        </div>
+                                        <div class="uvc-sub-heading ult-responsive"  data-responsive-json-new='{"font-size":"desktop:13px;","line-height":"desktop:24px;"}'  style="font-weight:normal; font-style:normal; font-size: 20px; text-align: justify; margin-top:20px; line-height: 1.7em;">
+                                            {% if construction %}
+                                                {{ construction.concept_description_4 }}
+                                            {% endif %}
+                                            {% if remodeling %}
+                                                {{ remodeling.concept_description_4 }}
+                                            {% endif %}
+                                            {% if voltage %}
+                                                {{ voltage.concept_description_4 }}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Imagen -->
+                        <div class="wpb_column vc_column_container vc_col-sm-6 text-center">
+                            <div class="vc_column-inner ">
+                                <div class="wpb_wrapper">
+                                    <div class="pro-responsive-slider pro-fluid-border">
+                                        <img src="{% if construction %}{{ construction.download_image2 }}{% endif %}{% if remodeling %}{{ remodeling.download_image2 }}{% endif %}{% if voltage %}{{ voltage.download_image2 }}{% endif %}" width="80%" height="80%"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- END vc_row wpb_row vc_row-fluid -->
+                </div> <!-- col-md-12 -->
+
+            </div>
+
+            <div class="wpb_column vc_column_container vc_col-sm-12">
+                <div class="vc_column-inner ">
+                    <div class="wpb_wrapper">
+                        <div class="ult-spacer spacer-construction" data-id="construction" data-height="50" data-height-mobile="25" data-height-tab="20" data-height-tab-portrait="15" data-height-mobile-landscape="15" style="clear:both;display:block;"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-md-3 sidebar-cont">
-                <div class="page-sidebar sidebar-right">
-                    <aside class="sidebar">
-                        <div class="webuild_widget widget_nav_menu">
-                            <div class="widget-title"><h4>All Services</h4></div>
-                            <div class="menu-services-menu-container">
-                                <ul id="menu-services-menu" class="menu">
-                                    <li id="menu-item-1" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item current_page_item">
-                                        <a href="{% url 'construction' %}">Construction</a>
-                                    </li>
-                                    <li id="menu-item-2" class="menu-item menu-item-type-post_type menu-item-object-page">
-                                        <a href="{% url 'remodeling' %}"> Remodeling</a>
-                                    </li>
-                                    <li id="menu-item-3" class="menu-item menu-item-type-post_type menu-item-object-page">
-                                        <a href="{% url 'voltage' %}"> Low Voltage</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
-            </div>
         </div>
+
     </div>
+
 </div>
 
 <!-- #content -->
@@ -575,7 +630,7 @@
     .page-header .title-wrapper{height:400px;}
     .page-header .title-wrapper h1{line-height:50px;font-weight:900;font-style:normal;color:#ffffff;font-size:48px;}
     .page-header .title-wrapper span{line-height:26px;font-weight:400;font-style:normal;color:#ffffff;font-size:22px;}
-     body{line-height:27px;font-weight:normal;font-style:normal;color:#647886;font-size:13px;}
+    body{line-height:27px;font-weight:normal;font-style:normal;color:#647886;font-size:13px;}
     .cont-padding{padding-top:60px;padding-bottom:0;}
     .brochure-box-59dc236f7ac27:hover .brochure-box__text59dc236f7ac27{color:#1a1c27!important;}
     .brochure-box-59dc236f7ac27 i{color:#ffffff;}

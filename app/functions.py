@@ -14,6 +14,11 @@ from django.template import Context
 # Global Variables
 NOMBRE_INSTITUCION = 'HOP Contracting'
 
+# TIPOS SERVICIOS
+TIPO_SERVICIO_CONSTRUCTION = 1
+TIPO_SERVICIO_REMODELING = 2
+TIPO_SERVICIO_VOLTAGE = 3
+
 
 def generate_file_name(nombre, original):
     ext = ""

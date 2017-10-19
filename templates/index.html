@@ -588,10 +588,10 @@
                         {#                             style="z-index: 6">LONG FROM LEFT (lfl)#}
                         {#                        </div>#}
                     </li>
-                    <li data-transition="fade" data-slotamount="5" data-masterspeed="700" >
-                        <!-- MAIN IMAGE -->
-                        <img src="{% static 'images/slider_2.jpg' %}"   alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                    </li>
+{#                    <li data-transition="fade" data-slotamount="5" data-masterspeed="700" >#}
+{#                        <!-- MAIN IMAGE -->#}
+{#                        <img src="{% static 'images/slider_2.jpg' %}"   alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">#}
+{#                    </li>#}
 
                 </ul>
                 <div class="tp-bannertimer"></div>
@@ -880,7 +880,7 @@
 
                                                         <script>
                                                             jQuery("#btn-construction").click(function () {
-                                                                location.href = "{% url 'construction' %}";
+                                                                location.href = "{% url 'services' %}?sid={{ tipo_servicio_construction }}";
                                                             })
                                                         </script>
                                                     </div>
@@ -913,7 +913,7 @@
 
                                                         <script>
                                                             jQuery("#btn-remodeling").click(function () {
-                                                                location.href = "{% url 'remodeling' %}";
+                                                                location.href = "{% url 'services' %}?sid={{ tipo_servicio_remodeling }}";
                                                             })
                                                         </script>
 
@@ -947,7 +947,7 @@
 
                                                         <script>
                                                             jQuery("#btn-voltage").click(function () {
-                                                                location.href = "{% url 'voltage' %}";
+                                                                location.href = "{% url 'services' %}?sid={{ tipo_servicio_voltage }}";
                                                             })
                                                         </script>
                                                     </div>

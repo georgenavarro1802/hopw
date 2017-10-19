@@ -1,7 +1,10 @@
 import datetime
+
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from app.functions import ok_json, send_html_mail, bad_json
+from app.functions import ok_json, send_html_mail, bad_json, TIPO_SERVICIO_CONSTRUCTION, TIPO_SERVICIO_REMODELING, \
+    TIPO_SERVICIO_VOLTAGE
 from app.models import Aboutus, Services, Whyus, Projects, Team, Newsletter, Clients, CONTACT_TYPES, Company, Contacts, \
     Construction, Remodeling, Voltage
 from hopw.settings import EMAIL_ACTIVE, SUSCRIPCION_EMAILS
@@ -34,6 +37,10 @@ def index(request):
     # Company
     company = Company.objects.all()[0]
 
+    TIPO_SERVICIO_CONSTRUCTION = 1
+    TIPO_SERVICIO_REMODELING = 2
+    TIPO_SERVICIO_VOLTAGE = 3
+
     return render(request,
                   "index.html",
                   {
@@ -46,6 +53,9 @@ def index(request):
                       'client': last_client,
                       'contact_types': contact_types,
                       'company': company,
+                      'tipo_servicio_construction': TIPO_SERVICIO_CONSTRUCTION,
+                      'tipo_servicio_remodeling': TIPO_SERVICIO_REMODELING,
+                      'tipo_servicio_voltage': TIPO_SERVICIO_VOLTAGE
                   })
 
 
@@ -121,34 +131,32 @@ def contact(request):
     return bad_json(error=0)
 
 
-def construction(request):
+def services(request):
 
     # Company
     company = Company.objects.all()[0] if Company.objects.exists() else None
 
-    # Construction
-    construction = Construction.objects.all()[0] if Construction.objects.exists() else None
+    construction = None
+    remodeling = None
+    voltage = None
 
-    return render(request, 'construction.html', {'company': company, 'construction': construction})
+    if 'sid' in request.GET and request.GET['sid']:
+        tipo_servicio = int(request.GET['sid'])
 
+        if tipo_servicio == TIPO_SERVICIO_CONSTRUCTION:
+            construction = Construction.objects.all()[0] if Construction.objects.exists() else None
 
-def remodeling(request):
+        if tipo_servicio == TIPO_SERVICIO_REMODELING:
+            remodeling = Remodeling.objects.all()[0] if Remodeling.objects.exists() else None
 
-    # Company
-    company = Company.objects.all()[0] if Company.objects.exists() else None
+        if tipo_servicio == TIPO_SERVICIO_VOLTAGE:
+            voltage = Voltage.objects.all()[0] if Voltage.objects.exists() else None
 
-    # Construction
-    remodeling = Remodeling.objects.all()[0] if Construction.objects.exists() else None
+        if construction or remodeling or voltage:
+            return render(request, 'services.html', {'company': company,
+                                                     'construction': construction,
+                                                     'remodeling': remodeling,
+                                                     'voltage': voltage})
 
-    return render(request, 'remodeling.html', {'company': company, 'remodeling': remodeling})
-
-
-def voltage(request):
-
-    # Company
-    company = Company.objects.all()[0] if Company.objects.exists() else None
-
-    # Construction
-    voltage = Voltage.objects.all()[0] if Construction.objects.exists() else None
-
-    return render(request, 'voltage.html', {'company': company, 'voltage': voltage})
+    else:
+        return HttpResponseRedirect('/')

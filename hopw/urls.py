@@ -35,13 +35,7 @@ urlpatterns = [
     url(r'^contact$', views.contact, name='contact'),
 
     # Construction
-    url(r'^construction$', views.construction, name='construction'),
-
-    # Remodeling
-    url(r'^remodeling$', views.remodeling, name='remodeling'),
-
-    # Low Voltage
-    url(r'^voltage$', views.voltage, name='voltage'),
+    url(r'^services$', views.services, name='services'),
 
 ]
 
