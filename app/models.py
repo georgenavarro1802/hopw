@@ -450,6 +450,18 @@ class Contacts(models.Model):
         else:
             return 'OTHER'
 
+    # def get_children(self):
+    #     return self.myco
+
+
+class MyContact(Contacts):
+
+    def __str__(self):
+        return "My Contact"
+
+    def get_contact_type_name(self):
+        return 'MY ---- Contact'
+
 
 class Company(models.Model):
     name = models.CharField(max_length=300, blank=True, null=True, verbose_name='Name')
