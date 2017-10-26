@@ -3,10 +3,10 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from app.functions import ok_json, send_html_mail, bad_json, TIPO_SERVICIO_CONSTRUCTION, TIPO_SERVICIO_REMODELING, \
-    TIPO_SERVICIO_VOLTAGE
-from app.models import Aboutus, Services, Whyus, Projects, Team, Newsletter, Clients, CONTACT_TYPES, Company, Contacts, \
-    Construction, Remodeling, Voltage
+from app.functions import (ok_json, send_html_mail, bad_json, TIPO_SERVICIO_CONSTRUCTION, TIPO_SERVICIO_REMODELING,
+                           TIPO_SERVICIO_VOLTAGE)
+from app.models import (Aboutus, Services, Whyus, Projects, Team, Newsletter, Clients, CONTACT_TYPES, Company,
+                        Contacts, Construction, Remodeling, Voltage)
 from hopw.settings import EMAIL_ACTIVE, SUSCRIPCION_EMAILS
 
 
