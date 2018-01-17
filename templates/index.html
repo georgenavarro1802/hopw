@@ -64,7 +64,7 @@
     <style id='webuild-dynamic-inline-css' type='text/css'>
 
         #content-wrapper{
-            margin-top: 250px;
+            {#margin-top: 50px;#}
         }
 
         .primary-menu .navbar-nav > li > a:hover, .primary-menu .navbar-nav > li.current-menu-item > a, #header-sticky .primary-menu .navbar-nav > li.current-menu-item > a {
@@ -86,7 +86,7 @@
             margin-bottom:50px !important;
         }
         .pro-slider {
-            top:0px;
+            {#top:0px;#}
         }
         .page-header .title-wrapper {
             text-align:left;
@@ -399,9 +399,9 @@
             <div class="tp-banner" >
                 <ul>
                     <!-- SLIDE  -->
-                    <li data-transition="fade" data-slotamount="5" data-masterspeed="700" >
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="200">
                         <!-- MAIN IMAGE -->
-                        <img src="{% static 'images/banner_web2.jpg' %}"   alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                        <img src="{% static 'images/banner_web2.jpg' %}" alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
 
 
                         {#                        <!-- LAYERS -->#}
@@ -597,19 +597,19 @@
                 <div class="tp-bannertimer"></div>
             </div>
         </div>
-        <script type="text/javascript">
-            var revapi;
-            jQuery(document).ready(function() {
-                revapi = jQuery('.tp-banner').revolution(
-                    {
-                        delay:15000,
-                        startwidth:1170,
-                        startheight:300,
-                        hideThumbs:10,
-                        fullScreenOffsetContainer: ""
-                    });
-            });	//ready
-        </script>
+{#        <script type="text/javascript">#}
+{#            var revapi;#}
+{#            jQuery(document).ready(function() {#}
+{#                revapi = jQuery('.tp-banner').revolution(#}
+{#                    {#}
+{#                        delay:7000,#}
+{#                        startwidth:1000,#}
+{#                        startheight:100,#}
+{#                        hideThumbs:5,#}
+{#                        fullScreenOffsetContainer: ""#}
+{#                    });#}
+{#            });	//ready#}
+{#        </script>#}
 
 
         <div id="content-wrapper" class="site-content">
@@ -811,6 +811,14 @@
                                 </div>
                             </div>
 
+                        </div>
+
+                        <div class="wpb_column vc_column_container vc_col-sm-12">
+                            <div class="vc_column-inner ">
+                                <div class="wpb_wrapper">
+                                    <div class="ult-spacer spacer-aboutus" data-id="aboutus" data-height="60" data-height-mobile="40" data-height-tab="60" data-height-tab-portrait="60" data-height-mobile-landscape="40" style="clear:both;display:block;"></div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- END ABOUT US -->
